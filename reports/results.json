@@ -17,54 +17,6 @@
       "selection": "training-only fit"
     },
     {
-      "model": "train_gaussian",
-      "label": "Spatial Gaussian",
-      "log2_likelihood": -12.319945180469517,
-      "ig_bits": -0.001157937173525525,
-      "training_seeds": [],
-      "selection": "training-only fit"
-    },
-    {
-      "model": "existing_histogram",
-      "label": "Spatial histogram",
-      "log2_likelihood": -12.760000366928512,
-      "ig_bits": -0.4412131236325205,
-      "training_seeds": [],
-      "selection": "training-only fit"
-    },
-    {
-      "model": "persistence",
-      "label": "Persistence",
-      "log2_likelihood": -11.907862091609749,
-      "ig_bits": 0.4109251516862429,
-      "training_seeds": [],
-      "selection": "training-only fit"
-    },
-    {
-      "model": "ar1",
-      "label": "Endpoint AR(1)",
-      "log2_likelihood": -11.721177374768814,
-      "ig_bits": 0.5976098685271776,
-      "training_seeds": [],
-      "selection": "training-only fit"
-    },
-    {
-      "model": "ar4",
-      "label": "Endpoint AR(4)",
-      "log2_likelihood": -11.706680746653984,
-      "ig_bits": 0.6121064966420082,
-      "training_seeds": [],
-      "selection": "training-only fit"
-    },
-    {
-      "model": "linear_history4",
-      "label": "Full-field linear AR",
-      "log2_likelihood": -11.650817866999047,
-      "ig_bits": 0.667969376296945,
-      "training_seeds": [],
-      "selection": "training-only fit"
-    },
-    {
       "model": "neural_ar_d4",
       "label": "Visual AR",
       "log2_likelihood": -11.845625380840232,

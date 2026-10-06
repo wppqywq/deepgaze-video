@@ -27,12 +27,6 @@ def export_results(storage):
     center_bias = baselines['macro_film_bits']['train_kde_scott']
     names = [
         ('train_kde_scott', 'Center bias (KDE)'),
-        ('train_gaussian', 'Spatial Gaussian'),
-        ('existing_histogram', 'Spatial histogram'),
-        ('persistence', 'Persistence'),
-        ('ar1', 'Endpoint AR(1)'),
-        ('ar4', 'Endpoint AR(4)'),
-        ('linear_history4', 'Full-field linear AR'),
         ('neural_ar_d4', 'Visual AR'),
     ]
     benchmark = []
@@ -94,11 +88,11 @@ def plot(results, output):
                          'axes.unicode_minus': False, 'axes.spines.top': False,
                          'axes.spines.right': False})
     fig, (left, right) = plt.subplots(1, 2, figsize=(11, 4.3), gridspec_kw={'width_ratios': [1.25, 1]})
-    keys = ['train_kde_scott', 'linear_history4', 'neural_ar_d4', 'static_d1', 'd1', 'r4', 'd4']
+    keys = ['train_kde_scott', 'neural_ar_d4', 'static_d1', 'd1', 'r4', 'd4']
     rows = {row['model']: row for row in results['benchmark']}
     scores = [rows[key]['ig_bits'] for key in keys]
     labels = [rows[key]['label'] for key in keys]
-    colors = ['#999999'] * 4 + ['#336699'] * 3
+    colors = ['#999999'] * 3 + ['#336699'] * 3
     left.barh(range(len(keys)), scores, color=colors, height=0.65)
     left.set_yticks(range(len(keys)), labels)
     left.invert_yaxis()
