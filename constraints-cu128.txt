@@ -1,0 +1,4 @@
+# Preserve the project's torch 2.9.0 while requiring the site's CUDA 12.8 wheels.
+torch==2.9.0+cu128
+torchvision==0.24.0+cu128
+torchaudio==2.9.0+cu128

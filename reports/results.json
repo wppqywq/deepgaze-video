@@ -1,0 +1,335 @@
+{
+  "protocol": "fovlanding-v1",
+  "scope": "development_assumptions",
+  "train_transitions": 7144,
+  "validation_transitions": 2571,
+  "training_films": 10,
+  "validation_films": 4,
+  "metric": "Film-macro mean log2(model probability / training KDE cell probability)",
+  "center_bias_log2_likelihood": -12.318787243295992,
+  "benchmark": [
+    {
+      "model": "train_kde_scott",
+      "label": "Center bias (KDE)",
+      "log2_likelihood": -12.318787243295992,
+      "ig_bits": 0.0,
+      "training_seeds": [],
+      "selection": "training-only fit"
+    },
+    {
+      "model": "train_gaussian",
+      "label": "Spatial Gaussian",
+      "log2_likelihood": -12.319945180469517,
+      "ig_bits": -0.001157937173525525,
+      "training_seeds": [],
+      "selection": "training-only fit"
+    },
+    {
+      "model": "existing_histogram",
+      "label": "Spatial histogram",
+      "log2_likelihood": -12.760000366928512,
+      "ig_bits": -0.4412131236325205,
+      "training_seeds": [],
+      "selection": "training-only fit"
+    },
+    {
+      "model": "persistence",
+      "label": "Persistence",
+      "log2_likelihood": -11.907862091609749,
+      "ig_bits": 0.4109251516862429,
+      "training_seeds": [],
+      "selection": "training-only fit"
+    },
+    {
+      "model": "ar1",
+      "label": "Endpoint AR(1)",
+      "log2_likelihood": -11.721177374768814,
+      "ig_bits": 0.5976098685271776,
+      "training_seeds": [],
+      "selection": "training-only fit"
+    },
+    {
+      "model": "ar4",
+      "label": "Endpoint AR(4)",
+      "log2_likelihood": -11.706680746653984,
+      "ig_bits": 0.6121064966420082,
+      "training_seeds": [],
+      "selection": "training-only fit"
+    },
+    {
+      "model": "linear_history4",
+      "label": "Full-field linear AR",
+      "log2_likelihood": -11.650817866999047,
+      "ig_bits": 0.667969376296945,
+      "training_seeds": [],
+      "selection": "training-only fit"
+    },
+    {
+      "model": "neural_ar_d4",
+      "label": "Visual AR",
+      "log2_likelihood": -11.845625380840232,
+      "ig_bits": 0.4731618624557594,
+      "training_seeds": [
+        0
+      ],
+      "selection": "validation-selected"
+    },
+    {
+      "model": "static_d1",
+      "label": "StaticD1",
+      "log2_likelihood": -10.852327143768791,
+      "ig_bits": 1.4664600995272004,
+      "training_seeds": [],
+      "selection": "unadapted"
+    },
+    {
+      "model": "d1",
+      "label": "D1",
+      "log2_likelihood": -9.97702205229426,
+      "ig_bits": 2.3417651910017323,
+      "training_seeds": [
+        0,
+        1,
+        2
+      ],
+      "selection": "validation-selected"
+    },
+    {
+      "model": "r4",
+      "label": "R4",
+      "log2_likelihood": -9.967353899663776,
+      "ig_bits": 2.351433343632216,
+      "training_seeds": [
+        0,
+        1,
+        2
+      ],
+      "selection": "validation-selected"
+    },
+    {
+      "model": "d4",
+      "label": "D4",
+      "log2_likelihood": -9.916029742490188,
+      "ig_bits": 2.4027575008058033,
+      "training_seeds": [
+        0,
+        1,
+        2
+      ],
+      "selection": "validation-selected"
+    }
+  ],
+  "by_film": {
+    "the march of the penguins": {
+      "center_bias_log2_likelihood": -12.931056522422297,
+      "visual_ar_ig_bits": 0.5048221145875385,
+      "d1_ig_bits": 2.188116471337098,
+      "d4_ig_bits": 2.1986508033837993,
+      "d4_minus_r4_bits": -0.0038925123773575856
+    },
+    "quiz show": {
+      "center_bias_log2_likelihood": -12.623779603876347,
+      "visual_ar_ig_bits": 0.43613572961451297,
+      "d1_ig_bits": 3.014292479762709,
+      "d4_ig_bits": 3.033727771793801,
+      "d4_minus_r4_bits": 0.009358769525327068
+    },
+    "batman forever": {
+      "center_bias_log2_likelihood": -11.4746342289556,
+      "visual_ar_ig_bits": 0.7400878673165021,
+      "d1_ig_bits": 2.535886124961868,
+      "d4_ig_bits": 2.681161002326583,
+      "d4_minus_r4_bits": 0.1035994510103085
+    },
+    "deep blue": {
+      "center_bias_log2_likelihood": -12.245678617929721,
+      "visual_ar_ig_bits": 0.21160173830448237,
+      "d1_ig_bits": 1.6287656879452506,
+      "d4_ig_bits": 1.6974904257190264,
+      "d4_minus_r4_bits": 0.09623092053606541
+    }
+  },
+  "selected_contrasts": {
+    "d4-r4": {
+      "macro_bits": 0.05132415717358585,
+      "by_film_seed_mean_bits": {
+        "batman forever": 0.1035994510103085,
+        "deep blue": 0.09623092053606541,
+        "quiz show": 0.009358769525327068,
+        "the march of the penguins": -0.0038925123773575856
+      },
+      "by_seed_macro_bits": {
+        "0": 0.037809448693193914,
+        "1": 0.06742233239841156,
+        "2": 0.04874069042915208
+      },
+      "seed_std_bits": 0.014974526558438585,
+      "descriptive_film_bootstrap_95": [
+        0.0027331285739847413,
+        0.09991518577318695
+      ]
+    },
+    "d4-d1": {
+      "macro_bits": 0.060992309804071,
+      "by_film_seed_mean_bits": {
+        "batman forever": 0.1452748773647142,
+        "deep blue": 0.06872473777377586,
+        "quiz show": 0.01943529203109288,
+        "the march of the penguins": 0.010534332046701067
+      },
+      "by_seed_macro_bits": {
+        "0": 0.04917905688448698,
+        "1": 0.08458912746580083,
+        "2": 0.049208745061925185
+      },
+      "seed_std_bits": 0.020435448934820678,
+      "descriptive_film_bootstrap_95": [
+        0.014984812038896974,
+        0.11381498103130888
+      ]
+    },
+    "r4-d1": {
+      "macro_bits": 0.00966815263048515,
+      "by_film_seed_mean_bits": {
+        "batman forever": 0.04167542635440569,
+        "deep blue": -0.027506182762289555,
+        "quiz show": 0.010076522505765814,
+        "the march of the penguins": 0.014426844424058652
+      },
+      "by_seed_macro_bits": {
+        "0": 0.011369608191293068,
+        "1": 0.017166795067389273,
+        "2": 0.0004680546327731072
+      },
+      "seed_std_bits": 0.008478395856217399,
+      "descriptive_film_bootstrap_95": [
+        -0.017022925965702505,
+        0.03377570039224572
+      ]
+    },
+    "d1-static_d1": {
+      "macro_bits": 0.875305091474531,
+      "by_film_seed_mean_bits": {
+        "batman forever": 0.5306406695457392,
+        "deep blue": 0.9585263186397383,
+        "quiz show": 1.1281149730919324,
+        "the march of the penguins": 0.8839384046207138
+      },
+      "by_seed_macro_bits": {
+        "0": 0.8609594716270972,
+        "1": 0.8665317645092965,
+        "2": 0.8984240382871991
+      },
+      "seed_std_bits": 0.0202145217179751,
+      "descriptive_film_bootstrap_95": [
+        0.637612081819239,
+        1.067070830974128
+      ]
+    }
+  },
+  "final_contrasts": {
+    "d4-r4": {
+      "macro_bits": 0.08735903297801784,
+      "by_film_seed_mean_bits": {
+        "batman forever": 0.13837028605868795,
+        "deep blue": 0.09637906231588704,
+        "quiz show": 0.07857837806199619,
+        "the march of the penguins": 0.03610840547550017
+      },
+      "by_seed_macro_bits": {
+        "0": 0.0901069738634237,
+        "1": 0.05932638739907903,
+        "2": 0.11264373767155078
+      },
+      "seed_std_bits": 0.026764684648835763,
+      "descriptive_film_bootstrap_95": [
+        0.05117606968559689,
+        0.12342230905951501
+      ]
+    },
+    "d4-d1": {
+      "macro_bits": 0.10543824466296982,
+      "by_film_seed_mean_bits": {
+        "batman forever": 0.22679585362465757,
+        "deep blue": 0.09112270550021802,
+        "quiz show": 0.06566903342364287,
+        "the march of the penguins": 0.03816538610336077
+      },
+      "by_seed_macro_bits": {
+        "0": 0.08923467261458429,
+        "1": 0.11386251767726652,
+        "2": 0.11321754369705861
+      },
+      "seed_std_bits": 0.014036410089627676,
+      "descriptive_film_bootstrap_95": [
+        0.05140471595257508,
+        0.1865141485744039
+      ]
+    },
+    "r4-d1": {
+      "macro_bits": 0.018079211684951968,
+      "by_film_seed_mean_bits": {
+        "batman forever": 0.0884255675659696,
+        "deep blue": -0.005256356815669013,
+        "quiz show": -0.012909344638353323,
+        "the march of the penguins": 0.0020569806278606015
+      },
+      "by_seed_macro_bits": {
+        "0": -0.0008723012488394133,
+        "1": 0.05453613027818749,
+        "2": 0.0005738060255078281
+      },
+      "seed_std_bits": 0.031580895990259386,
+      "descriptive_film_bootstrap_95": [
+        -0.009167763321799843,
+        0.06500508647055994
+      ]
+    },
+    "d1-static_d1": {
+      "macro_bits": 0.7733912668454741,
+      "by_film_seed_mean_bits": {
+        "batman forever": 0.4131914733947717,
+        "deep blue": 0.8969327980404559,
+        "quiz show": 1.0202329659223335,
+        "the march of the penguins": 0.763207830024335
+      },
+      "by_seed_macro_bits": {
+        "0": 0.8001147599081144,
+        "1": 0.7489443443177537,
+        "2": 0.771114696310554
+      },
+      "seed_std_bits": 0.025661058785110717,
+      "descriptive_film_bootstrap_95": [
+        0.5341268045561928,
+        0.9585828819813947
+      ]
+    }
+  },
+  "final_ig_bits": {
+    "d1": 2.2398513663726742,
+    "d4": 2.3452896110356445,
+    "r4": 2.2579305780576266,
+    "static_d1": 1.4664600995272004
+  },
+  "scientific_calibration_verified": false,
+  "provenance": {
+    "source_sha256": {
+      "selected": "18d6616124c73d417d83765ee20a43c62b3b3f07d6394e8dfe787f87dd15c9ec",
+      "final": "dd24feeefc722757e79010e384cbbb69da68a1a71f7cdbdbacf3746bccfb5d14",
+      "baselines": "8917a3c90b51f84e009b75f746de38a9193e47c303a7994402c5589fcd78264a"
+    },
+    "input_scan_sha256": "c99ffc5c65b8c5ee84bffe1edd6606b3ba06547de8d411b5fc5fe9c735501dfb",
+    "input_data_sha256": {
+      "targets.jsonl": "3d5f6de0e8f67bb8ec95174a750d83c11eb9355cdd2aa06ed826f3adb8e626e0",
+      "frames.json": "f8a1cbdeaff7750a0262482d628787a67445e3f901a1d6db63b028e81a517b79",
+      "training-prior.npy": "6aa218a8cad311f82426476739d2a7e264acd2b5438ff34bd25ef913ca2d5fb5",
+      "source-config.json": "d7645c1103da61f6af5179f7c237c1c3462e3dc84b76504f5571416c35a7e7f0"
+    }
+  },
+  "limitations": [
+    "Validation data also select checkpoints; this is not an independent test.",
+    "DeepGaze uses three seeds; visual AR uses one seed and a different training budget.",
+    "The independent stimulus units remain four films, not twelve film-seed combinations.",
+    "Playback alignment and per-trial display geometry remain assumed."
+  ]
+}

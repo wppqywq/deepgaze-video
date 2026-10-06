@@ -1,0 +1,50 @@
+{
+  "protocol": {
+    "name": "fovlanding-v1",
+    "quantization": "floor100-v1",
+    "event_rule": "merge-fixa-purs-v1",
+    "task": "free_viewing",
+    "cutoff_rule": "next_saccade_onset",
+    "gaze_input_rule": "sample_time_strictly_less_than_cutoff",
+    "video_input_rule": "frame_pts_less_than_or_equal_to_cutoff",
+    "target_rule": "first_valid_raw_sample_at_next_foveation_start",
+    "target_grid": [
+      100,
+      100
+    ]
+  },
+  "events": {
+    "foveation_labels": [
+      "FIXA",
+      "PURS"
+    ],
+    "saccade_labels": [
+      "SACC",
+      "ISAC"
+    ],
+    "pso_labels": [
+      "HPSO",
+      "LPSO",
+      "IHPS",
+      "ILPS"
+    ]
+  },
+  "input": {
+    "frame_count": 4,
+    "history_window_ms": 1000.0,
+    "history_events_max": 4,
+    "require_full_history_window": true,
+    "relative_time_unit": "ms"
+  },
+  "provenance": {
+    "project_git_commit": null,
+    "data_validation_file": "inputs/audit/summary.json",
+    "upstream_git_commit": "5cd84d2225beb92e77617b1ee5c5480cae948ab7",
+    "dataset_manifest_sha256": "0e25cd35d48d30fa82ca968ce66f34cfe2305ded7a1a396baac4ed8e0117e123",
+    "split_manifest_sha256": "576cf0995091d793df5efc6bc169c5e2050b58944bf95229b700e0df7e5b84d1",
+    "detector_version": "1.1.2",
+    "detector_parameters_file": "inputs/detector-parameters.py",
+    "audited_trial_metadata_file": "inputs/audited-trials.jsonl",
+    "final_test_accessed": true
+  }
+}
