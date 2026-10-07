@@ -2,7 +2,7 @@
 
 Predict the next gaze landing in a video from the viewer's completed gaze events and the video frames available at saccade onset.
 
-This project adapts [DeepGaze3.5-VL](https://arxiv.org/abs/2607.02083) to the `fovlanding-v1` task. It compares current-frame, repeated-frame, and historical-frame inputs with a visual autoregressive (AR) baseline. Every predictor is benchmarked against the same training-fitted center-bias distribution.
+This project adapts [DeepGaze3.5-VL](https://arxiv.org/abs/2607.02083) to the 'next-foveation landing prediction' task. It compares current-frame, repeated-frame, and historical-frame inputs with a visual autoregressive (AR) baseline. Every predictor is benchmarked against the same training-fitted center-bias distribution.
 
 ## Results
 
@@ -16,8 +16,6 @@ Information gain (IG) is the improvement in log likelihood over a training-only 
 | D1: adapted DeepGaze | Current frame | 2.342 |
 | R4: adapted DeepGaze | Current frame repeated four times | 2.351 |
 | D4: adapted DeepGaze | Four historical frames | 2.403 |
-
-![Center-bias benchmark and historical-content gain by film](reports/results.png)
 
 DeepGaze D1/R4/D4 scores average three training seeds. Visual AR uses one seed and a different training budget.
 
